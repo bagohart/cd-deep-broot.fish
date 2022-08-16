@@ -33,7 +33,7 @@ Copy the file `cd_deep_broot.fish` into `$XDG_CONFIG_HOME/fish/functions/` (prob
 ```
 alias cdd 'cd_deep_broot --min-depth=2 --hidden'
 ```
-`cd_deep_broot` offers a number of arguments most of which are passed to both `fd` and `broot`.
+`cd_deep_broot` accepts a number of arguments most of which are passed to both `fd` and `broot`.
 (Note that arguments for broot and fd are partly incompatible, so they are translated internally.)
 
 ### `H/hidden`
@@ -43,7 +43,7 @@ Include hidden directories (and files) in the search.
 Include (fd/git-ignored) directories (and files) in the search.
 
 ### `max-depth`, `min-depth`
-Limit the min and max depth of the search (only passed to fd).
+Limit the min and max depth of the search (only passed to `fd`).
 
 ### Different search modes: `D/show-dirs-only`, `d/search-dirs-only`, `f/search-files-and-dirs`, `F/search-files-only`
 Choose exactly one of those (default `d/search-dirs-only`):
