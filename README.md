@@ -12,7 +12,11 @@ Assume that you are in some directory `~/project/` and you want to cd into a dir
 * `fzf` works fine, but its view of the filesystem isn't terribly helpful. Also, invoking fzf without an initial search string will flood you with irrelevant matches, which can be irritating.
 * `broot` works great, but invoking it introduces a context switch that is overkill if the search string `foo` is sufficient to uniquely identify that directory.
 
-This plugin aims to solve this particular use case. Just type `cd_deep_broot foo` to `cd` into `foo_things` if it is a unique match with `foo` below `~/project/`.
+This plugin aims to solve this particular use case. Just type 
+```
+cd_deep_broot foo
+```
+to `cd` into `foo_things` if it is a unique match with `foo` below `~/project/`.
 Otherwise (in the case of several or no matches), it invokes broot prepopulated with the search string `foo` to give you an overview of the filesystem and let you choose the directory manually.
 
 Additionally, instead of the directory name you can use a filename if it's unique. For example, starting from `~`
@@ -40,8 +44,8 @@ Copy the file `cd_deep_broot.fish` into `$XDG_CONFIG_HOME/fish/functions/` (prob
 ```
 alias cdd 'cd_deep_broot --min-depth=2 --hidden'
 ```
-`cd_deep_broot` accepts a number of arguments most of which are passed to both `fd` and `broot`.
-(Note that arguments for broot and fd are partly incompatible, so they are translated internally.)
+`cd_deep_broot` accepts a number of options most of which are passed to both `fd` and `broot`.
+(Note that options for `broot` and `fd` are partly incompatible, so they are translated internally.)
 
 ### `H/hidden`
 Include hidden directories (and files) in the search.
