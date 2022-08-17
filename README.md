@@ -2,13 +2,13 @@
 A fish plugin to cd deep into any directory, invoking broot as a fallback
 
 ## Elevator pitch: Yet another alternative cd command?
-Tons of alternative cd commands exist, such as z, bookmarks, fzf, broot and many others.
+Tons of alternative cd commands exist, such as z (or its clones), various implementations of bookmarks, fzf, broot and many others.
 But in the following use case, I found all of them to be unsuitable:\
 Assume that you are in some directory `~/project/` and you want to cd into a directory `foo_things` which is somewhere below the current directory.
 
 * Shell globs, i.e. `cd **/*foo*` are annoying to type and fail if the directory isn't unique
 * bookmarks are useless if this isn't a directory you want to bookmark.
-* `z` is useless if you haven't visited this directory before. Worse than that, `z foo` may jump to any other matching location outside of `~/project/`.
+* `z` is useless if you haven't visited this directory before. Without additional options, `z foo` may also jump to any other matching location outside of `~/project/`.
 * `fzf` works fine, but its view of the filesystem isn't terribly helpful. Also, invoking fzf without an initial search string will flood you with irrelevant matches, which can be irritating.
 * `broot` works great, but invoking it introduces a context switch that is overkill if the search string `foo` is sufficient to uniquely identify that directory.
 
