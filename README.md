@@ -15,6 +15,13 @@ Assume that you are in some directory `~/project/` and you want to cd into a dir
 This plugin aims to solve this particular use case. Just type `cd_deep_broot foo` to `cd` into `foo_things` if it is a unique match with `foo` below `~/project/`.
 Otherwise (in the case of several or no matches), it invokes broot prepopulated with the search string `foo` to give you an overview of the filesystem and let you choose the directory manually.
 
+Additionally, instead of the directory name you can use a filename if it's unique. For example, starting from `~`
+```
+cd_deep_broot -F config.fish
+```
+will cd directly into `~/.config/fish`, unless there is another `config.fish` file below `~`.
+For more details on search modes, see Configuration/Options below.
+
 ## Requirements
 Uses [fd](https://github.com/sharkdp/fd) to search the directory and [broot](https://dystroy.org/broot/) (actually its shell function `br`) as a fallback.\
 Also uses the `cd` function (not the cd builtin) to not break navigation `prevd` and `nextd`.
@@ -28,7 +35,7 @@ fisher install bagohart/cd-deep-broot.fish
 ### Manually:
 Copy the file `cd_deep_broot.fish` into `$XDG_CONFIG_HOME/fish/functions/` (probably `~/.config/fish/functions`).
 
-## Configuration
+## Configuration/Options
 `cd_deep_broot` is an intentionally long name to prevent clashes with other plugins. Add a line to your `fish.config` file to alias it, and optionally add some arguments, for example:
 ```
 alias cdd 'cd_deep_broot --min-depth=2 --hidden'
