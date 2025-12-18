@@ -17,7 +17,7 @@ This plugin aims to solve this particular use case. Just type
 cd_deep_broot foo
 ```
 to `cd` into `foo_things` if it is a unique match with `foo` below `~/project/`.
-Otherwise (in the case of several or no matches), it invokes broot prepopulated with the search string `foo` to give you an overview of the filesystem and let you choose the directory manually.
+Otherwise, it invokes broot prepopulated with the search string `foo` (in the case of no matches) or `/foo` (in the case of multiple matches) to give you an overview of the filesystem and let you choose the directory manually.
 
 Additionally, instead of the directory name you can use a filename if it's unique. For example, starting from `~`
 ```
