@@ -70,8 +70,8 @@ function cd_deep_broot --description 'cd into any deep directory, falling back t
         case 1
             cd -- $paths[1]
         case 0
-            br $broot_options --cmd $argv[1]
+            br $broot_options --cmd "$argv[1]"
         case '*'
-            br $broot_options --cmd /$argv[1]
+            br $broot_options --cmd /"$argv[1]"
     end
 end
